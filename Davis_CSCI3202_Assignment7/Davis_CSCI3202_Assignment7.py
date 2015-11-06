@@ -5,25 +5,7 @@
 from __future__ import division
 import random
 
-#Calculate exact probability and error between it and prior sampling estimation
-
-#Need to do rejection sampling
-#Calculate exact probability and error between it and rejection sampling estimation
-
-#P1
-#a .48
-#b .75
-#c .4
-#d 0
-
-#P3
-#a .49
-#b .7037037037037..
-#c .4
-#d 0
-
-############################################### #######
-
+######################################################
 
 class node():
     def __init__(self, name):
@@ -51,36 +33,10 @@ class node():
 
 ######################################################
 
-#Rejection?
-'''
-def rejection_sampling_calculation(node):
-    #Always get a float between 0 and 1
-    randomnumber = random.random()
-    #print randomnumber
-
-    #P(C=true)
-    cloudy_true_counter = 0
-    cloudy_false_counter = 0
-
-    for x in Rhonda_Samples:
-        if x < node.prob_cloudy_true:
-            cloudy_true_counter = cloudy_true_counter + 1
-        else:
-            cloudy_false_counter = cloudy_false_counter + 1
-
-    print cloudy_true_counter, "is number of Cloudy+'s"
-    print cloudy_false_counter, "is number of Cloudy-'s"
-    '''
-
-
 def diagram_traversal(node):
 
     #Loop through all 100 of Rhonda_Numbers, generating 25 Samples in the process
     #these are combinations of true/false states for Cloudy, Sprinkler, Rain, and Wet Grass
-
-    ###
-    #Need to make list of lists to contain pairings of true/false conditions generated with every sample
-    ###
 
     counter = 0
     i = 0
@@ -205,8 +161,8 @@ def prior_sampling(masterList):
     prob_cloudy_given_rainy = cloudy_given_rainy_counter / rain_counter
     prob_sprinkler_given_wetgrass = sprinkler_given_wetgrass_counter / wetgrass_counter
 
-    if sprinkler_given_cloudy_and_wetgrass_counter == 0:
-        print 'No events where (s=true|c=true, wg=true), it is therefore 0'
+    #if sprinkler_given_cloudy_and_wetgrass_counter == 0:
+        #print 'No events where (s=true|c=true, wg=true), it is therefore 0'
     #prob_sprinkler_given_cloudy_and_wetgrass = sprinkler_counter / sprinkler_given_cloudy_and_wetgrass_counter
     prob_sprinkler_given_cloudy_and_wetgrass = 0
 
